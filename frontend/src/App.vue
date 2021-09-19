@@ -1,10 +1,7 @@
 <template>
   <div id="app">
-    <el-container style="background-color: white;">
-      <el-header>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/files">Files</router-link>
-      </el-header>
+    <Navbar />
+    <el-container>
       <el-main>
         <router-view />
       </el-main>
@@ -12,17 +9,35 @@
   </div>
 </template>
 
+<script>
+import Navbar from '@/components/Navbar.vue';
+
+export default {
+  components: {
+    Navbar,
+  },
+};
+</script>
+
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Handlee';font-size: 22px;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  font-size: 150%;
 }
 
 body {
-  background-image: url('assets/images/background.jpg');;
+  background-color: #eee;
+  background-image: url("assets/images/background.png");
+  margin: 0;
+  padding: 0;
 }
+
+.card-container {
+  background-color: white;
+  padding: 0.5rem;
+  height: 100%;
+}
+
 </style>

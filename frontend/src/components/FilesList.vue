@@ -1,6 +1,9 @@
 <template>
-  <el-table :data="files" style="width: 100%">
-    <el-table-column label="Name" width="180">
+  <el-table
+    v-loading="loading"
+    :data="files"
+    style="width: 100%">
+    <el-table-column label="Name" header-align="center" align="center">
       <template slot-scope="scope">
         <el-popover trigger="hover" placement="top">
           <p>Name: {{ scope.row.name }}</p>
@@ -10,9 +13,11 @@
         </el-popover>
       </template>
     </el-table-column>
-    <el-table-column label="Action">
+    <el-table-column label="Action" header-align="center" align="center">
       <template slot-scope="scope">
-        <el-button size="mini" type="danger"  @click="$emit('handleDelete', scope.row)" >Delete
+        <el-button size="mini" type="danger"
+          @click="$emit('handleDelete', scope.row)">
+          Delete
         </el-button>
       </template>
     </el-table-column>
@@ -21,7 +26,7 @@
 
 <script>
 export default {
-  props: ['files'],
+  props: ['files', 'loading'],
 };
 
 </script>
