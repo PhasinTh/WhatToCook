@@ -44,17 +44,22 @@ export default {
   },
   methods: {
     onSubmit() {
-      http.post('process')
+      this.$router.push({
+        name: 'Result',
+        params: {
+          planId: 1,
+        },
+      });
+      http.post('plan')
         .then((resopnse) => {
           this.$router.push({
             name: 'Result',
             params: {
-              results: resopnse.data,
+              planId: resopnse.data,
             },
           });
         })
         .catch((error) => console.log(error));
-      console.log('submit!');
     },
     onClear() {
       this.form = {
@@ -87,7 +92,7 @@ export default {
 }
 
 .el-form-item__label {
-  font-size: 120% !important;
+  font-size: x-large!important;
 }
 
 .el-slider__marks-text {
@@ -100,6 +105,6 @@ export default {
 }
 
 .el-input__inner {
-  font-size: medium!important;;
+  font-size: medium!important;
 }
 </style>

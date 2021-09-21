@@ -1,6 +1,7 @@
 <template>
   <el-table
     v-loading="loading"
+    stripe
     :data="files"
     style="width: 100%">
     <el-table-column label="Name" header-align="center" align="center">

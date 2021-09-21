@@ -1,4 +1,4 @@
-# frontend
+# AI-PP frontend
 
 ## Project setup
 ```

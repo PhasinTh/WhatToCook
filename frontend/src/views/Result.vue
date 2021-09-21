@@ -3,7 +3,7 @@
     <el-col :md="20">
       <div class="card-container">
           <h1>Results</h1>
-          {{ results }}
+          {{ planId }}
           <div>
             <el-button
               type="primary"
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  props: ['results'],
+  props: ['planId'],
 };
 </script>
 
