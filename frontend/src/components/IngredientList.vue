@@ -1,19 +1,23 @@
 <template >
   <el-row :gutter="8">
-    <el-col :md="8" v-for="item in ingredients" :key="item.id" style="margin-bottom: .5rem;">
+    <el-col
+      :md="cols ? 24/cols : 12"
+      v-for="item in ingredients"
+      :key="item.id"
+      style="margin-bottom: .5rem;">
     <el-card shadow="hover">
       <el-row >
-        <el-col :span="6" align="center" >
+        <el-col :span="4" align="center" >
           <el-avatar shape="square"
           :size="36"
-          src="@/assets/images/default_icon.png"
+          :src="item.url"
           >
-          <img :src="item.url"/>
+          <img src="@/assets/images/default_icon.png"/>
         </el-avatar>
         </el-col>
-        <el-col :span="18" align="left" style="padding-left: 0.5rem;">
+        <el-col :span="20" align="left" style="padding-left: 0.5rem;">
           <b>{{ item.quantity || 1 }} x {{ item.name }} </b> <br>
-          {{ item.calories }} cal. cost:{{ item.cost }}
+          Cal: <b>{{ item.calories }}</b>  Cost: <b>{{ item.cost }}</b>
         </el-col>
       </el-row>
       </el-card>
@@ -22,13 +26,12 @@
 </template>
 <script>
 export default {
-  props: ['ingredients'],
+  props: ['ingredients', 'cols'],
 };
 </script>
 
 <style>
 .el-avatar {
-  background-color: #FFF !important;
+  background-color: #fff !important;
 }
-
 </style>

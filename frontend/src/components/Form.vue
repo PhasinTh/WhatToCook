@@ -44,12 +44,6 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.$router.push({
-        name: 'Result',
-        params: {
-          planId: 1,
-        },
-      });
       http.post('plan')
         .then((resopnse) => {
           this.$router.push({
@@ -72,39 +66,3 @@ export default {
 };
 
 </script>
-
-<style>
-
-.el-slider__bar {
-  background-color: lightseagreen !important;
-}
-.el-slider__button{
-  border-color: lightseagreen !important;
-}
-
-.el-slider {
-  margin-left: 20%;
-  margin-right: 20%;
-}
-
-.el-form-item {
-  margin-bottom: 2.5rem!important;
-}
-
-.el-form-item__label {
-  font-size: x-large!important;
-}
-
-.el-slider__marks-text {
-  margin-top: 5px !important;
-}
-
-.el-button {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.el-input__inner {
-  font-size: medium!important;
-}
-</style>

@@ -1,18 +1,18 @@
 <template>
-  <el-header>
+  <div>
     <router-link to="/" class="default-link">Home</router-link> |
     <router-link to="/files" class="default-link">Files</router-link>
-  </el-header>
+  </div>
 </template>
 
 <style scoped>
   .default-link {
     text-decoration: none;
     color: #000;
-    font-size: larger;
+    font-size: xx-large;
   }
   .default-link:hover {
-    color: #409EFF;
+    color: lightseagreen !important;
   }
 
 </style>

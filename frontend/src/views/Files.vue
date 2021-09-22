@@ -3,12 +3,15 @@
     <el-row type="flex" justify="center">
       <el-col :md="16">
         <h1>Files</h1>
-        <files-list @handleDelete="handleDelete" :files="files" :loading="loading" />
+        <files-list @handleDelete="handleDelete"
+          :files="files"
+          :loading="loading"
+          style="min-height: 30vh" />
       </el-col>
     </el-row>
     <el-row type="flex" justify="center" style="margin-top: .5rem;">
         <el-col :md="16">
-          <file-upload @handleUpload="fetchData" />
+          <file-upload @handleUpload="fetchData" v-if="!loading" />
         </el-col>
     </el-row>
   </div>
