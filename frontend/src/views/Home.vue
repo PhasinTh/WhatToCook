@@ -40,7 +40,7 @@ export default {
       this.loading = true;
       http.get('ingredients')
         .then((response) => {
-          this.ingredients = response.data;
+          this.ingredients = response.data.ingredients;
           this.loading = false;
         })
         .catch((error) => {
